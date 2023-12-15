@@ -29,5 +29,8 @@ Options:
   --help, -h Show help message (default false)
   --table, -t Your table name (default )
 ```
+./sql2struct -d pad -t user_info
+
+```
 
 
