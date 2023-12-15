@@ -18,6 +18,10 @@ pen:
   tablePrefix: "tbl"
   modelSuffix: "Model"
 ```
+```
+tablePrefix set the prefix will trim
+modelSuffix set the suffix will add after struct name
+```
 
 Useage
 
@@ -28,6 +32,7 @@ Options:
   --database, -d Your database id in config.yaml (default )
   --help, -h Show help message (default false)
   --table, -t Your table name (default )
+```
 ```
 ./sql2struct -d pad -t user_info
 
