@@ -1,6 +1,8 @@
 Generator go struct from MySQL database
 
-config.yaml
+put sql2struct.yaml in the same path with sql2struct exec binary file, or use -c set the config file
+
+sql2struct.yaml 
 ```
 pad:
   host: "127.0.0.1:3306"
