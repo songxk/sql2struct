@@ -1,14 +1,18 @@
 package main
 
-var rootPath string
+import (
+	"os"
+	"path/filepath"
+)
 
-func SetRootPath(path string) {
-	rootPath = path
-}
-func GetRootPath() string {
-	if rootPath != "" {
-		return rootPath
-	} else {
-		return "."
+func GetExecPath() (string, error) {
+	exePath, err := os.Executable()
+	if err != nil {
+		return "", err
 	}
+	absPath, err := filepath.Abs(exePath)
+	if err != nil {
+		return "", err
+	}
+	return filepath.Dir(absPath), nil
 }

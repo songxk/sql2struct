@@ -8,11 +8,17 @@ import (
 )
 
 func loadConfig(filePath string) (Config, error) {
-	configFile := GetRootPath() + "/config.yaml"
+	configFile := ""
 	if filePath != "" {
 		configFile = filePath
+	} else {
+		execPath, err := GetExecPath()
+		if err != nil {
+			log.Fatal(err.Error())
+		}
+		configFile = execPath + "/sql2struct.yaml"
 	}
-	if _, err := os.Stat(filePath); err != nil && errors.Is(err, os.ErrNotExist) {
+	if _, err := os.Stat(configFile); err != nil && errors.Is(err, os.ErrNotExist) {
 		log.Fatal(configFile + " not exist ")
 	}
 	yamlFile, err := os.ReadFile(configFile)
