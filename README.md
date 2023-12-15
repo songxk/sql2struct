@@ -23,7 +23,7 @@ tablePrefix set the prefix will trim
 modelSuffix set the suffix will add after struct name
 ```
 
-Useage
+Usage
 
 ```
 Usage: sql2struct [options]
